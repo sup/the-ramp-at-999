@@ -12,7 +12,7 @@ CONSUMER_SECRET=os.environ.get('CONSUMER_SECRET')
 ACCESS_TOKEN=os.environ.get('ACCESS_TOKEN')
 ACCESS_TOKEN_SECRET=os.environ.get('ACCESS_TOKEN_SECRET')
 
-@app.route('/')
+@app.route('/', methods=['POST'])
 def tweet():
     # Generate the message that the bot will tweet
     tz = pytz.timezone("US/Pacific")
