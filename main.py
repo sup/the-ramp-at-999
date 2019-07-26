@@ -2,6 +2,7 @@
 import pytz
 import datetime
 import os
+from random import randint
 from flask import Flask
 from twython import Twython
 
@@ -14,7 +15,7 @@ ACCESS_TOKEN_SECRET=os.environ.get('ACCESS_TOKEN_SECRET')
 @app.route('/')
 def tweet():
     # Generate the message that the bot will tweet
-    msg = "BANG BANG"
+    msg = "BANG BANG occurred at " + str(datetime.datetime.now())
 
     # Tweet the message out
     twitter = Twython(CONSUMER_KEY, CONSUMER_SECRET, ACCESS_TOKEN, ACCESS_TOKEN_SECRET)
